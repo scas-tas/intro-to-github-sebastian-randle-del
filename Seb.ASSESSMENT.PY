@@ -13,6 +13,15 @@ def amount_orde(num)
 
 def loud(volum)
  
+
+'''while True:
+    response = input("Enter your response: ")
+    if not response.isupper():
+        print("Please respond in upper case.")
+    else:
+        print("Your response: ", response)
+        break'''
+
  while volum.islower():
      print("WHAT WAS THAT!?")
      input("SPEAK UP! ")
