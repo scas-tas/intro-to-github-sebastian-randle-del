@@ -1,11 +1,11 @@
 """coffee shop"""
 
-reg = ["TIM", "TOM", "TAM", "MAOFN", "ZAVONE", "ALICE", "JEDD", "ROBERT"]
+reg = ["TIM", "TOM", "TAM", "MAOFN", "ZAVONE", "ALICE", "JEDD", "ROBERT"]                                 #Declare lists
 menu = ["COFFEE","MUFFIN","BANNANA BREAD","PASTRY","TEA","SALTED CARAMEL LATTE","CAPPUCCINO"]
 
 entire_orde = {}
 
-def amount_orde(num):
+def amount_orde(num):                         #This section of code functions as expected
       if num == 0: 
          return ('WHATS THE POINT OF ORDERING NOTHING?!')
       elif num < 0: 
@@ -28,7 +28,7 @@ def loop_orde(lop):
       repe = loop_orde(again)
       
 
-    entire_orde[orde]
+  #  entire_orde[orde]
   
   
   else:
@@ -38,13 +38,13 @@ def loop_orde(lop):
  elif lop == "NO":
    """t"""
   
+#MAINLINE______________________________________________________________________________
 
 amount = int(input("you know what to do "))
 ting = amount_orde(amount)
 print (ting)
  
- 
- #Mainline
+
 """while True:
     response = input("Enter your response: ")
     if not response.isupper():
