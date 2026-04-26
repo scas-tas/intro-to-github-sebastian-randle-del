@@ -89,8 +89,9 @@ if orde in menu:   #this is another instance of wanting interesting interactions
         if again == "NO":
           repe = loop_orde(again)
           print(F'order for {nam}:') 
-          for amount, orde in entire_orde.items():
             print(f'{amount} {orde}{mult}')                 #this is a loop so each item in the order is on a different line 
+       repe = loop_orde(again)
+       print(F'ORDER FOR {nam}!:') 
           
           price_orde = price_orde * 0.85                    #this is the 15% discount
           print(f'THAT WILL COST:${price_orde}')
@@ -119,6 +120,15 @@ if orde in menu:   #this is another instance of wanting interesting interactions
           for amount, orde in entire_orde.items():
             print(f'{amount} {orde}{mult}')
             print(f'THAT WILL COST: ${price_orde}')
+       for amount, orde in entire_orde.items():        # just like the other two but without the discount
+         print(f'{amount} {orde}{mult}')
+       print(f'THAT WILL COST: ${price_orde}')
+
+     elif again == "YES":
+       print(F'ORDER FOR {nam}!:') 
+       for amount, orde in entire_orde.items():
+         print(f'{amount} {orde}{mult}')
+         print(f'THAT WILL COST!: ${price_orde}')
  else:
     ting = amount_orde(amount)
     print (ting)
