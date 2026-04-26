@@ -1,6 +1,5 @@
 """coffee shop"""
 reg = ["TIM", "TOM", "TAM", "MAOFN", "ZAVONE", "ALICE", "JEDD", "ROBERT"]                         #lists
-menu = ["COFFEE","MUFFIN","BANNANA BREAD","PASTRY","TEA","SALTED CARAMEL LATTE","CAPPUCCINO"]
 menu = ["COFFEE","MUFFIN","BANANA BREAD","PASTRY","TEA","SALTED CARAMEL LATTE","CAPPUCCINO"]
 menu_prices = {"COFFEE":6.50,  "MUFFIN": 3.00,  "BANANA BREAD":6.00,  "PASTRIES":5.00,  "TEA":9.00,  "SALTED CARAMEL LATTES":12.50,  "CAPPUCCINO":5.50}
 
@@ -12,7 +11,7 @@ price_orde = 0
 
 def too_quiet(yell):       #pretty useful as it is the main feature of the original program, it turned out to be easier than i thought
   if yell.islower():
-   print("I DIDN'T HEAR YOUR ORDER!")
+   print("I CAN'T HEAR YOU!")
    exit()
   elif yell.isupper():
    pass
@@ -58,7 +57,7 @@ def loop_orde(lop):      #loops the code may not be incredibly neccesary but its
 #__________________Mainline_______________________________________
 
 #I have added spaces to the menu to make everything line up nicely so its easier to see the entire thing
-print("CURRENTLY WE ARE SELLING:\n \n       --COFFEES--\n       --MUFFINS--\n     --BANANA BREAD--\n       --PASTRIES--\n         --TEA--\n--SALTED CARAMEL LATTES--\n     --CAPPUCCINO-- \n")
+print("CURRENTLY WE ARE SELLING:\n \n        --COFFEE--\n        --MUFFIN--\n     --BANANA BREAD--\n        --PASTRY--\n         --TEA--\n--SALTED CARAMEL LATTE--\n     --CAPPUCCINO-- \n")
 
 orde = input('WHAT WOULD YOU LIKE TO ORDER?! ')
 loud = too_quiet(orde)
@@ -81,45 +80,35 @@ if orde in menu:   #this is another instance of wanting interesting interactions
       mult = "'s"
    else:                                         #this was so it sounds gramatically correct
       mult = ""
-      if nam in reg:
-        print("YOU HAVE A 15% DISCOUNT FOR BEING A REGULAR CUSTOMER!")     #actual discount on items
+   if nam in reg:
+     print("YOU HAVE A 15% DISCOUNT FOR BEING A REGULAR CUSTOMER!")     #actual discount on items
         
-        again = input("IS THAT ALL?! ")
-        loud = too_quiet(again)
-        if again == "NO":
-          repe = loop_orde(again)
-          print(F'order for {nam}:') 
-            print(f'{amount} {orde}{mult}')                 #this is a loop so each item in the order is on a different line 
+     again = input("IS THAT ALL?! ")
+     loud = too_quiet(again)
+     if again == "NO":
        repe = loop_orde(again)
        print(F'ORDER FOR {nam}!:') 
+       for amount, orde in entire_orde.items():
+         print(f'{amount} {orde}{mult}')                 #this is a loop so each item in the order is on a different line 
           
-          price_orde = price_orde * 0.85                    #this is the 15% discount
-          print(f'THAT WILL COST:${price_orde}')
+       price_orde = price_orde * 0.85                    #this is the 15% discount
+       print(f'THAT WILL COST:${price_orde}')
 
         
-        elif again == "YES":
-          print(F'order for {nam}:') 
-          for amount, orde in entire_orde.items():         #same as before except ordered only one item
-            print(f'{amount} {orde}{mult}')
+     elif again == "YES":
+       print(F'ORDER FOR {nam}!:') 
+       for amount, orde in entire_orde.items():         #same as before except ordered only one item
+         print(f'{amount} {orde}{mult}')
 
-          price_orde = price_orde * 0.85
-          print(f'THAT WILL COST: ${price_orde}')
+       price_orde = price_orde * 0.85
+       print(f'THAT WILL COST: ${price_orde}')
 
-      else:
-        again = input("IS THAT ALL?! ")
-        loud = too_quiet(again)
-        if again == "NO":
-          repe = loop_orde(again)
-          print(F'order for {nam}:') 
-          for amount, orde in entire_orde.items():        # just like the other two but without the discount
-            print(f'{amount} {orde}{mult}')
-          print(f'THAT WILL COST: ${price_orde}')
-
-        elif again == "YES":
-          print(F'order for {nam}:') 
-          for amount, orde in entire_orde.items():
-            print(f'{amount} {orde}{mult}')
-            print(f'THAT WILL COST: ${price_orde}')
+   else:
+     again = input("IS THAT ALL?! ")
+     loud = too_quiet(again)
+     if again == "NO":
+       repe = loop_orde(again)
+       print(F'ORDER FOR {nam}!:') 
        for amount, orde in entire_orde.items():        # just like the other two but without the discount
          print(f'{amount} {orde}{mult}')
        print(f'THAT WILL COST: ${price_orde}')
