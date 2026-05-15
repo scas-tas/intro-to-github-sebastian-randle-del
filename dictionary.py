@@ -13,8 +13,4 @@ while another == "yes":
 
     another = input("Add another order? (yes/no) ")
 
-<<<<<<< HEAD
-print(orders[0])
-=======
 print(orders)
->>>>>>> eb05419db7a3a3ce0553efbedfdce6d82ec405da
