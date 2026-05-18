@@ -9,7 +9,7 @@ class Account:
   def deposit(self, amount):
     self.balance = self.balance + amount
   
-  def withdrawl(self, amount):
+  def withdrawl(self,amount):
     self.balance = self.balance - amount
 
 #____________________MAINLINE_______________________________
@@ -24,13 +24,14 @@ robertAccount.deposit(100)
 
 made_account = [sebAccount, robertAccount, zavoneAccount]
 
-valid = False
 
 print(robertAccount.owner)
 print(robertAccount.balance)
 print(robertAccount.number)
 
 #interaction_start
+
+select = "unselected"
 
 valid = False
 
@@ -46,9 +47,11 @@ while valid == False:
         # Compare the entered number with the account's number
         if access_account == account.number:
 
-            print("Account found")
+            print("valid Account number")
             print("Owner:", account.owner)
             print("Balance:", account.balance)
+
+            opened_account = account
 
             # Stop the loop
             valid = True
@@ -60,23 +63,23 @@ while valid == False:
     if valid == False:
         print("Invalid account number")
 
+print("to select an option please wright what you would like to do")
 
+while select == "unselected":
+   moving_money = input("would you like to -DEPOSIT- or -WITHDRAW- money :")
+   moving_money = moving_money.upper()
 
+   if moving_money == "DEPOSIT":
+     money = int(input("how much would you like to deposit?: "))
+     opened_account.deposit(money)
+     print ("new account balance: ", opened_account.balance)
+     select = "selected"
 
+   elif moving_money == "WITHDRAW":
+     money = int(input("how much would you like to withdraw?: "))
+     opened_account.withdrawl(money)
+     print ("new account balance: ", opened_account.balance)
+     select = "selected"
 
-"""while valid == False:
-
-  access_account = input("bank account number: ")
-
-  for account in made_account:
-
-      if access_account == account.number:        #checks if thats a real account number
-       print("check")   
-       print ("account owner's name:  " account.owner)
-
-
-       valid = True
-valid = True"""
-
-
-
+   else:
+     print("that is an invalid response please try again.")
