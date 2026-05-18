@@ -69,13 +69,13 @@ while select == "unselected":
    moving_money = input("would you like to -DEPOSIT- or -WITHDRAW- money :")
    moving_money = moving_money.upper()
 
-   if moving_money == "DEPOSIT":
+   if moving_money == "DEPOSIT":                                   # checks if you would like to deposit money
      money = int(input("how much would you like to deposit?: "))
      opened_account.deposit(money)
      print ("new account balance: ", opened_account.balance)
      select = "selected"
 
-   elif moving_money == "WITHDRAW":
+   elif moving_money == "WITHDRAW":                                # checks if you would like to withdraw money
      money = int(input("how much would you like to withdraw?: "))
      opened_account.withdrawl(money)
      print ("new account balance: ", opened_account.balance)
