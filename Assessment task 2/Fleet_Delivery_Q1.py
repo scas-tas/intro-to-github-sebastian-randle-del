@@ -4,6 +4,7 @@ def combine_trucks(trucks, first_truck, second_truck):
     trucks_cargo =trucks[first_truck-1] + trucks[second_truck-1] #combines the load found in bboth trucks 
     if first_truck == second_truck:
      print(" ERROR : same truck has been inputted twice") #demonstrates the boundary case and avoids it
+     print(f' this would however =',trucks_cargo)
      exit()
     print(trucks_cargo)                           # prints the combined total
     print("first truck:", trucks[first_truck-1],", second truck:",trucks[second_truck-1])  #shows the amount of cargo in each truck
