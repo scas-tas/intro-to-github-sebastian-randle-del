@@ -1,6 +1,6 @@
-"""import random
-""""""random.randrange(0, 10)
-random.append('x')""""""
+import random
+random.randrange(0, 10)
+
 
 
 # Initialise all cells
@@ -11,8 +11,7 @@ for i in range(3):
     pos = random.randint(0, 10)
     grid[pos] = 'X'
 
-print(grid)"""
-
+print(grid)
 lop = 5
 
 while lop != 25:

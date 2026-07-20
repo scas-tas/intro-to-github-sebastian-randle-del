@@ -1,6 +1,7 @@
 #banking
 
 class Account:
+
   def __init__(self, number, balance, owner):
     self.number = number 
     self.balance = balance 
@@ -12,6 +13,7 @@ class Account:
   def withdrawl(self,amount):
     self.balance = self.balance - amount
 
+class interest:
 #____________________MAINLINE_______________________________
 
 robertAccount = Account("12345", 100, "robert")
@@ -63,7 +65,7 @@ while valid == False:
     if valid == False:
         print("Invalid account number")
 
-print("to select an option please wright what you would like to do")
+print("to select an option please write what you would like to do")
 
 while select == "unselected":
    moving_money = input("would you like to -DEPOSIT- or -WITHDRAW- money :")
@@ -78,8 +80,13 @@ while select == "unselected":
    elif moving_money == "WITHDRAW":                                # checks if you would like to withdraw money
      money = int(input("how much would you like to withdraw?: "))
      opened_account.withdrawl(money)
-     print ("new account balance: ", opened_account.balance)
+     if account.balance <= -1:
+        print("insufficient funds")
+
+     else:
+      print ("new account balance: ", opened_account.balance)
      select = "selected"
 
    else:
      print("that is an invalid response please try again.")
+   
